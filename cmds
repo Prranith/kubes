@@ -22,3 +22,60 @@ kubectl delete deployment demokube
 minikube stop
 minikube delete --all --purge
 
+
+
+
+
+
+
+
+
+
+groovy script pipeline
+
+---------------------
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building the project..."
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying..."
+            }
+        }
+    }
+}
+-----------------------------------
+minikube start
+minikube status
+kubectl get nodes
+kubectl get pods
+kubectl create deployment mygnix —image:ngnix
+kubectl get pods
+minikube service mygnix —url (or) minikube dashboard
+kubectl delete deployment mygnix
+kubectl delete service mygnix
+minikube stop
+minikube delete
+
+
+
+docker pull jasonrivers/nagios:latest
+docker run —name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+open browser and enter localhost://8888
+
+docker stop nagiosdemo
+docker rm nagiosdemo
+-------------------------------------
