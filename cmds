@@ -58,6 +58,8 @@ pipeline {
     }
 }
 -----------------------------------
+minikube
+------------------------------------
 minikube start
 minikube status
 kubectl get nodes
@@ -70,7 +72,9 @@ kubectl delete service mygnix
 minikube stop
 minikube delete
 
-
+-----------------
+nagios
+-------------
 
 docker pull jasonrivers/nagios:latest
 docker run —name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
