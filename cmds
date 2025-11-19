@@ -1,0 +1,20 @@
+minikube delete --all --purge
+minikube start --driver=docker
+
+kubectl create deployment DemoKube --image=nginx
+kubectl get deployments
+kubectl get pods
+
+kubectl scale deployment DemoKube --replicas=4
+kubectl get pods
+
+kubectl expose deployment DemoKube --type=NodePort --port=80
+kubectl get svc DemoKube
+
+minikube service DemoKube --url
+
+# Cleanup
+kubectl delete service DemoKube
+kubectl delete deployment DemoKube
+minikube stop
+minikube delete --all --purge
