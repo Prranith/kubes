@@ -22,18 +22,9 @@ kubectl delete deployment demokube
 minikube stop
 minikube delete --all --purge
 
-
-
-
-
-
-
-
-
-
+-----------------------
 groovy script pipeline
-
----------------------
+-----------------------
 pipeline {
     agent any
 
@@ -57,6 +48,7 @@ pipeline {
         }
     }
 }
+
 -----------------------------------
 minikube
 ------------------------------------
@@ -84,12 +76,8 @@ password: nagios
 
 docker stop nagiosdemo
 docker rm nagiosdemo
+
 -------------------------------------
-
-
-
-
-
 AWS DEPLOYMENT COMMANDS (SHORT NOTES FOR EXAM)
 -------------------------------------------
 # Upload project to EC2
@@ -102,7 +90,6 @@ ssh -i key.pem ec2-user@EC2_IP
 cd myapp
 npm install
 node app.js
-
 
 # Create bucket
 aws s3 mb s3://mybucket
@@ -138,3 +125,115 @@ aws ecs update-service \
 eb init
 eb create my-env
 eb deploy
+
+-------------------------
+AWS - new
+-------------------------
+
+#start lab
+#click on AWS
+
+#EC2->instances->launch instance
+#name the server, click ubuntu, select t2.micro, create new key pair(downloads .pem), click 3 allow -> launch instance
+
+#after status check 
+#EC2->instances->i-0d4aw3d541a3dw0a->connect->SSH client
+#take example url : ssh-i...........com
+#run in AWS folder------Examples folder(index.html)
+               |________.pem files
+
+sudo apt update 
+sudo apt-get install docker.io
+sudo apt install nano
+
+#Add pairkeyfile in AWS folder
+#create index.html and write code
+#push it in GitHub thought gitbash
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin ___________
+git push -u origin main
+
+#In ubuntu:
+
+git clone _____________
+ls
+cd AWS
+ls
+nano Dockerfile
+
+#paste:
+#FROM nginx:alpine
+#COPY . /usr/share/nginx/html
+#ctrl+o enter ctrl+x
+
+
+sudo docker build -t mywebapp .
+sudo docker run -d -p 80:80 mywebapp .
+
+# go to instances-> copy public ipv4 address->run it in browser
+
+sudo docker ps 
+sudo docker stop (container_id)
+
+#terminate
+
+--------------------
+AWS - Maven
+--------------------
+
+#start lab
+#click on AWS
+
+#EC2->instances->launch instance
+#name the server, click ubuntu, select t2.micro, create new key #pair(downloads .pem), click 3 allow -> launch instance
+
+#after status check 
+#EC2->instances->i-0d4aw3d541a3dw0a->connect->SSH client
+#take example url : ssh-i...........com
+#run in AWS folder------Examples folder(index.html), .pem files
+#ubuntu:
+
+    sudo apt update 
+    sudo apt-get install docker.io
+    sudo apt install git
+    sudo apt install nano
+
+#Add pairkeyfile in AWS folder
+#create index.html and write code
+#push it in GitHub thought gitbash
+#BASH:
+
+    git init
+    git add .
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin ___________
+    git push -u origin main
+
+#ubuntu:
+
+git clone ___________
+ls
+cd AWS
+ls
+nano Dockerfile
+
+#paste:
+#FROM nginx:alpine
+COPY . /usr/share/nginx/html
+
+#ctrl+o enter ctrl+x
+
+sudo docker build -t mavenwebproject .
+sudo docker run -d -p 9090:8080 mavenwebproject .
+
+# go to instances-> security->inbound rules->add custom TCP and port range:9090-> copy public ipv4 address ->paste in browser.
+
+sudo docker ps
+sudo docker stop (container_id)
+
+#terminate
