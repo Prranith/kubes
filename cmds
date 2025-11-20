@@ -11,7 +11,7 @@ kubectl get pods
 kubectl scale deployment demokube --replicas=4
 kubectl get pods
 
-kubectl expose deployment demokube --type=nodeport --port=80
+kubectl expose deployment demokube --type=NodePort --port=80
 kubectl get svc demokube
 
 minikube service demokube --url
