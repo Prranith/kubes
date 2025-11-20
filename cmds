@@ -77,7 +77,7 @@ nagios
 -------------
 
 docker pull jasonrivers/nagios:latest
-docker run —name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
 open browser and enter localhost://8888
 
 docker stop nagiosdemo
