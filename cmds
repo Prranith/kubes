@@ -225,7 +225,23 @@ sudo docker stop (container_id)
 
 
 ///hhhhhhhh
+ssh keyyyyyy
+docker --version git --version
 if docker,git not installed sudo su and sudo apt-get update
 
 install docker sudo apt-get install docker.io
-git clone mavenweb
+git clone mavenweb(https://github.com/Prranith/jenkins_web.git)
+ls
+cd jenkins_web
+“nano Dockerfile”  
+//
+FROM tomcat:9.0
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+//
+mvn package       If mvn not installed:  sudo apt-get install maven -y   , mvn package        
+ “sudo docker build-t dep1 .”            name of image:img1
+sudo docker run -d -p 8081:8080 dep1
+sudo docker images
