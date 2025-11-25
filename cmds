@@ -49,21 +49,6 @@ pipeline {
     }
 }
 
------------------------------------
-minikube
-------------------------------------
-minikube start
-minikube status
-kubectl get nodes
-kubectl get pods
-kubectl create deployment mygnix —image:ngnix
-kubectl get pods
-minikube service mygnix —url (or) minikube dashboard
-kubectl delete deployment mygnix
-kubectl delete service mygnix
-minikube stop
-minikube delete
-
 -----------------
 nagios
 -------------
