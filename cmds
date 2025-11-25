@@ -222,3 +222,10 @@ sudo docker ps
 sudo docker stop (container_id)
 
 #terminate
+
+
+///hhhhhhhh
+if docker,git not installed sudo su and sudo apt-get update
+
+install docker sudo apt-get install docker.io
+git clone mavenweb
