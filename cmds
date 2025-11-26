@@ -110,3 +110,10 @@ mvn clean install
 maven_java_test delete workspace
 maven_java **/*  mvn test
 **/*
+
+
+
+
+**/*.war
+webapp
+http://localhost:8080//
