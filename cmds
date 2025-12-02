@@ -117,3 +117,148 @@ maven_java **/*  mvn test
 **/*.war
 webapp
 http://localhost:8080//
+-----------------------------------------------
+
+git checkout -- <filename>
+git reset <filename>
+git commit --amend
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git diff
+git checkout -b feature/your-feature-name
+git add .
+git commit -m "descriptive message"
+git push origin feature-branch-name
+git push -u origin main
+
+
+
+
+
+
+----------------------------------------
+DOCKER
+----------------------------------------
+1. Working with Docker CLI Commands (Using Redis)
+Step 1: Pull Redis image
+docker pull redis
+
+Step 2: Run Redis container
+docker run --name my-redis -d redis
+
+Step 3: Check running containers
+docker ps
+
+Step 4: Access Redis CLI
+docker exec -it my-redis redis-cli
+
+
+Example inside Redis:
+
+SET name "Alice"
+GET name
+exit
+
+Step 5: Stop container
+docker stop my-redis
+
+Step 6: Start container
+docker start my-redis
+
+Step 7: Remove container
+docker rm my-redis
+
+Step 8: Remove image
+docker rmi redis
+
+2. Working with Dockerfile
+Step 1: Create project folder
+
+Windows:
+
+cd /c/DockerProjects/Redis
+
+
+Mac/Linux:
+
+mkdir ~/DockerProjects/Redis
+cd ~/DockerProjects/Redis
+
+Step 2: Create Dockerfile
+
+Content:
+
+FROM redis:latest
+CMD ["redis-server"]
+
+Docker Commands (Step-by-Step)
+1. Build image
+docker build -t redisnew .
+
+2. Run container
+docker run --name myredisnew -d redisnew
+
+3. List running containers
+docker ps
+
+4. Stop container
+docker stop myredisnew
+
+5. Login to DockerHub
+docker login
+
+6. Show all containers
+docker ps -a
+
+7. Commit container to image
+docker commit <container_id> budarajumadhurika/redis1
+
+8. List images
+docker images
+
+9. Push image to DockerHub
+docker push budarajumadhurika/redis1
+
+10. Remove container
+docker rm <container_id>
+
+11. Remove image
+docker rmi budarajumadhurika/redis1
+
+12. Again list all containers
+docker ps -a
+
+13. Logout
+docker logout
+
+14. Pull uploaded image
+docker pull budarajumadhurika/redis1
+
+15. Run container from pulled image
+docker run --name myredis -d budarajumadhurika/redis1
+
+16. Enter Redis CLI
+docker exec -it myredis redis-cli
+
+
+Commands:
+
+SET name "Abcdef"
+GET name
+exit
+
+17. List containers
+docker ps -a
+
+18. Stop container
+docker stop myredis
+
+19. Remove container
+docker rm <container_id>
+
+20. List images
+docker images
+
+21. Remove image
+docker rmi budarajumadhurika/redis1
+
