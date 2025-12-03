@@ -80,7 +80,8 @@ AWS - Maven_web
 
 ssh keyyyyyy
 docker --version git --version
-if docker,git not installed sudo su and sudo apt-get update
+if docker,git not installed sudo su and 
+sudo apt-get update
 
 install docker cammand --- sudo apt-get install docker.io       maven---- sudo apt-get install -y maven
 git clone https://github.com/Gayathri2608-hub/maven_web.git
@@ -88,17 +89,10 @@ ls
 cd maven_web 
 mvn clean package
 ls target/
-sudo docker build -t dep1 .           name of image:img1
-sudo docker run -d -p 8081:8080 dep1
+sudo docker build -t dep1 .          
+sudo docker run -d -p 80:8080 dep1
 sudo docker images
-Go to “Inbound rules” → Edit inbound rules
 
-Add this rule:
-
-Type	Protocol	Port Range	Source
-Custom TCP	TCP	8081	0.0.0.0/0
-Custom TCP	TCP	8081	::/0
-http://public ipv4:8081
 
 -------
 Maven java Jenkins
