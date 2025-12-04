@@ -106,6 +106,8 @@ maven_java **/*  mvn test
 **/*
 
 
+https://github.com/harshanmateti33/Samplemavenjava.git
+https://github.com/harshanmateti33/SampleMavenWeb.git
 
 
 **/*.war
